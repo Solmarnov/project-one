@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< Updated upstream
 
 <head>
   <title>Passport Authentication</title>
@@ -23,13 +24,146 @@
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <h2>Welcome <span class="member-name"></span></h2>
+=======
+  <head>
+    <title>Passport Authentication</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css"
+    />
+    <link href="stylesheets/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/logout">
+            Logout
+          </a>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <h2>Welcome <span class="member-name"></span></h2>
+          <!-- email provided through sign-up appears here-->
+
+          <h3>Personal Information</h3>
+          <br />
+          <form class="user-information">
+            <!-- mandatory = first name, last name, sex -->
+
+            <!-- first name input -->
+            <div class="form-group">
+              <label for="first-name">First Name</label>
+              <!-- input type name needs to be changed to something related to label for "" -->
+              <input
+                type="email"
+                class="form-control"
+                id="first-name"
+                placeholder="First Name"
+              />
+            </div>
+            <!-- last name -->
+            <div class="form-group">
+              <label for="last-name">Last Name</label>
+              <!-- input type name needs to be changed to something related to label for "" -->
+              <input
+                type="email"
+                class="form-control"
+                id="last-name"
+                placeholder="Last Name"
+              />
+            </div>
+
+            <!-- sex -->
+            <div class="form-group">
+              <label for="sex">Sex</label>
+              <!-- input type name needs to be changed to something related to label for "" -->
+              <input
+                type="email"
+                class="form-control"
+                id="sex"
+                placeholder="Female, Male, Other"
+              />
+            </div>
+
+            <!-- prompts when user clicks into members page -->
+            <!-- age -->
+            <div class="form-group">
+              <label for="age">Age</label>
+              <!-- input type name needs to be changed to something related to label for "" -->
+              <input
+                type="email"
+                class="form-control"
+                id="age"
+                placeholder="00-99"
+              />
+            </div>
+
+            <!-- mobile -->
+            <div class="form-group">
+              <label for="mobile">Mobile</label>
+              <!-- input type name needs to be changed to something related to label for "" -->
+              <input
+                type="email"
+                class="form-control"
+                id="mobile"
+                placeholder="0412-345-678"
+              />
+            </div>
+
+            <br />
+
+            <!-- height -->
+            <div class="form-group">
+              <label for="height">Height</label>
+              <!-- input type name needs to be changed to something related to label for "" -->
+              <input
+                type="email"
+                class="form-control"
+                id="height"
+                placeholder="1.69m"
+              />
+            </div>
+
+            <!-- weight -->
+            <div class="form-group">
+              <label for="weight">Weight</label>
+              <!-- input type name needs to be changed to something related to label for "" -->
+              <input
+                type="email"
+                class="form-control"
+                id="weight"
+                placeholder="50kg"
+              />
+            </div>
+
+            <!-- Target Weight -->
+            <div class="form-group">
+              <label for="target-weight">Target Weight</label>
+              <!-- input type name needs to be changed to something related to label for "" -->
+              <input
+                type="email"
+                class="form-control"
+                id="target-weight"
+                placeholder="50kg"
+              />
+            </div>
+
+            <!-- submit personal information -->
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+        </div>
+>>>>>>> Stashed changes
       </div>
     </div>
-  </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/members.js"></script>
-
-</body>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/members.js"></script>
+  </body>
 </html>
