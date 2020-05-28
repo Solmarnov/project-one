@@ -29,39 +29,33 @@ module.exports = function(app) {
         res.status(401).json(err);
       });
   });
-
-<<<<<<< Updated upstream
-=======
-  // Route for updating user
+  
+  // Route for updating user 
   app.put("/api/member/:id", (req, res) => {
     // log body of request when passed from front
     console.log(req.body);
-    db.User.update(
-      {
-        first_name: req.body["first-name"],
-        last_name: req.body["last-name"],
-        age: req.body.age,
-        sex: req.body.sex,
-        mobile: req.body.mobile,
-        height: req.body.height,
-        weight: req.body.weight,
-        goal_weight: req.body["target-weight"],
-      },
-      {
-        where: {
-          id: req.params.id,
-        },
+    db.User.update({
+      first_name: req.body["first-name"],
+      last_name: req.body["last-name"],
+      age: req.body.age,
+      sex: req.body.sex,
+      mobile: req.body.mobile,
+      height: req.body.height,
+      weight: req.body.weight,
+      goal_weight: req.body["target-weight"]
+    }, {
+      where: {
+        id: req.params.id
       }
-    )
-      .then(() => {
-        res.redirect(302, "/api/user_data");
-      })
-      .catch((err) => {
-        res.status(401).json(err);
-      });
+    })
+    .then(() => {
+      res.redirect(302, "/api/user_data")
+    })
+    .catch(err => {
+      res.status(401).json(err);
+    });
   });
 
->>>>>>> Stashed changes
   // Route for logging user out
   app.get("/logout", (req, res) => {
     req.logout();
@@ -79,8 +73,6 @@ module.exports = function(app) {
       res.json({
         email: req.user.email,
         id: req.user.id,
-<<<<<<< Updated upstream
-=======
         "first-name": req.user.first_name,
         "last-name": req.user.last_name,
         age: req.user.age,
@@ -88,8 +80,7 @@ module.exports = function(app) {
         mobile: req.user.mobile,
         height: req.user.height,
         weight: req.user.weight,
-        "target-weight": req.user.goal_weight,
->>>>>>> Stashed changes
+        "target-weight": req.user.goal_weight
       });
     }
   });
