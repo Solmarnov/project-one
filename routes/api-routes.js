@@ -35,14 +35,14 @@ module.exports = function(app) {
     // log body of request when passed from front
     console.log(req.body);
     db.User.update({
-      first_name: req.body["first-name"],
-      last_name: req.body["last-name"],
+      first_name: req.body.firstName,
+      last_name: req.body.lastName,
       age: req.body.age,
       sex: req.body.sex,
       mobile: req.body.mobile,
       height: req.body.height,
       weight: req.body.weight,
-      goal_weight: req.body["target-weight"]
+      goal_weight: req.body.goal_weight
     }, {
       where: {
         id: req.params.id
