@@ -301,6 +301,7 @@ th {
   overflow: hidden; }
 
 .overlay {
+  background-color: #f9f9ff;
   position: absolute;
   left: 0;
   right: 0;
@@ -315,6 +316,9 @@ th {
 
 .no-padding {
   padding: 0; }
+
+.section-bg {
+  background: #f9fafc; }
 
 @media (max-width: 767px) {
   .no-flex-xs {
@@ -537,6 +541,7 @@ th {
   padding: 20px 30px; }
 
 #header {
+  background-color: lightgrey!important;
   position: fixed;
   left: 0;
   top: 0;
@@ -786,7 +791,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 /* Homepage Styles */
 /* Start Banner Area */
 .banner-area {
-  background: url(../../images/banner-bg.jpg) center;
+  background: url(../img/banner-bg.jpg) center;
   background-size: cover; }
   .banner-area .container-fluid {
     padding-left: 15%;
@@ -942,7 +947,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   margin-bottom: 0px; }
 
 .about-banner {
-  background: url(../../images/exercise.png) right no-repeat;
+  background: url(../img/top-banner.jpg) right no-repeat;
   background-size: cover;
   position: relative; }
 
