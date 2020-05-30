@@ -1,10 +1,6 @@
 $(document).ready(() => {
-  // This file just does a GET request to figure out which user is logged in
-  // and updates the HTML on the page
-  $.get("/api/user_data").then(data => {
-    $(".member-name").text(data.email);
-    $(".member-name").attr("data-user-id", data.id);
-  });
+  getUserData();
+
   $(".user-information").on("submit", event => {
     event.preventDefault();
     console.log(event);
@@ -35,19 +31,8 @@ $(document).ready(() => {
         .trim()
     };
 
-    if (!memberData.first_name || !memberData.last_name) {
-      return;
-    }
-
     UserInfo(memberData);
-    $("#first-name").val("");
-    $("#last-name").val("");
-    $("#age").val("");
-    $("#sex").val("");
-    $("#mobile").val("");
-    $("#height").val("");
-    $("#weight").val("");
-    $("#goal_weight").val("");
+
   });
   // Does a post to the signup route. If successful, we are redirected to the members page
   // Otherwise we log any errors
@@ -56,12 +41,11 @@ $(document).ready(() => {
     $.ajax({
       url: "/api/member/" + $(".member-name").attr("data-user-id"),
       type: "PUT",
-      data: memberData,
-      success: function (userData) {
-        //play with data
-        console.log(userData);
-        location.replace("/members");
-      }
+      data: memberData
+    })
+    .then(userData => {
+      console.log(userData);
+      getUserData();
     });
     /*$.put("/api/member/" + $(".member-name").attr("data-user-id"), memberData)
       .then(() => {
@@ -75,4 +59,23 @@ $(document).ready(() => {
     $("#alert .msg").text(err.responseJSON);
     $("#alert").fadeIn(500);
   }*/
+
+
+  function getUserData() {
+    // This file just does a GET request to figure out which user is logged in
+    // and updates the HTML on the page
+    $.get("/api/user_data").then(data => {
+      console.log(data);
+      $(".member-name").text(data.email);
+      $(".member-name").attr("data-user-id", data.id);
+      $("#first-name").val(data.first_name);
+      $("#last-name").val(data.last_name);
+      $("#age").val(data.age);
+      $("#sex").val(data.sex);
+      $("#mobile").val(data.mobile);
+      $("#height").val(data.height);
+      $("#weight").val(data.weight);
+      $("#target-weight").val(data.goal_weight);
+    });
+  }
 });
