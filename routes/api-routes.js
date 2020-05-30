@@ -34,22 +34,18 @@ module.exports = function(app) {
   app.put("/api/member/:id", (req, res) => {
     // log body of request when passed from front
     console.log(req.body);
-    db.User.update({
-      first_name: req.body.firstName,
-      last_name: req.body.lastName,
-      age: req.body.age,
-      sex: req.body.sex,
-      mobile: req.body.mobile,
-      height: req.body.height,
-      weight: req.body.weight,
-      goal_weight: req.body.goal_weight
-    }, {
+
+    const userUpdate = clean(req.body);
+
+    db.User.update(userUpdate, {
       where: {
         id: req.params.id
       }
     })
-    .then(() => {
-      res.redirect(302, "/api/user_data")
+    .then((dbUser) => {
+      console.log(dbUser);
+      res.json(dbUser);
+      // res.redirect(302, "/api/user_data")
     })
     .catch(err => {
       res.status(401).json(err);
@@ -86,4 +82,14 @@ module.exports = function(app) {
   });
 
   //Save all the user information to the database
+
+  // This function removes null, undefined, and "" blank values from an object 
+  function clean(obj) {
+    for (var propName in obj) { 
+      if (obj[propName] === null || obj[propName] === undefined || obj[propName] === "") {
+        delete obj[propName];
+      }
+    }
+    return obj;
+  }
 };
