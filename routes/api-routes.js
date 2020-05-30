@@ -10,7 +10,7 @@ module.exports = function(app) {
     // Sending back a password, even a hashed password, isn't a good idea
     res.json({
       email: req.user.email,
-      id: req.user.id
+      id: req.user.id,
     });
   });
 
@@ -20,14 +20,40 @@ module.exports = function(app) {
   app.post("/api/signup", (req, res) => {
     db.User.create({
       email: req.body.email,
-      password: req.body.password
+      password: req.body.password,
     })
       .then(() => {
         res.redirect(307, "/api/login");
       })
-      .catch(err => {
+      .catch((err) => {
         res.status(401).json(err);
       });
+  });
+  
+  // Route for updating user 
+  app.put("/api/member/:id", (req, res) => {
+    // log body of request when passed from front
+    console.log(req.body);
+    db.User.update({
+      first_name: req.body["first-name"],
+      last_name: req.body["last-name"],
+      age: req.body.age,
+      sex: req.body.sex,
+      mobile: req.body.mobile,
+      height: req.body.height,
+      weight: req.body.weight,
+      goal_weight: req.body["target-weight"]
+    }, {
+      where: {
+        id: req.params.id
+      }
+    })
+    .then(() => {
+      res.redirect(302, "/api/user_data")
+    })
+    .catch(err => {
+      res.status(401).json(err);
+    });
   });
 
   // Route for logging user out
@@ -46,8 +72,18 @@ module.exports = function(app) {
       // Sending back a password, even a hashed password, isn't a good idea
       res.json({
         email: req.user.email,
-        id: req.user.id
+        id: req.user.id,
+        "first-name": req.user.first_name,
+        "last-name": req.user.last_name,
+        age: req.user.age,
+        sex: req.user.sex,
+        mobile: req.user.mobile,
+        height: req.user.height,
+        weight: req.user.weight,
+        "target-weight": req.user.goal_weight
       });
     }
   });
+
+  //Save all the user information to the database
 };
