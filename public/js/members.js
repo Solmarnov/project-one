@@ -9,10 +9,10 @@ $(document).ready(() => {
     event.preventDefault();
     console.log(event);
     const memberData = {
-      firstName: $("#first-name")
+      first_name: $("#first-name")
         .val()
         .trim(),
-      lastName: $("#last-name")
+      last_name: $("#last-name")
         .val()
         .trim(),
       age: $("#age")
@@ -35,7 +35,7 @@ $(document).ready(() => {
         .trim()
     };
 
-    if (!memberData.firstName || !memberData.lastName) {
+    if (!memberData.first_name || !memberData.last_name) {
       return;
     }
 
@@ -57,9 +57,10 @@ $(document).ready(() => {
       url: "/api/member/" + $(".member-name").attr("data-user-id"),
       type: "PUT",
       data: memberData,
-      success: function () {
+      success: function (userData) {
         //play with data
-        location.replace("/homepage");
+        console.log(userData);
+        location.replace("/members");
       }
     });
     /*$.put("/api/member/" + $(".member-name").attr("data-user-id"), memberData)
