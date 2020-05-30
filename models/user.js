@@ -23,6 +23,9 @@ module.exports = function(sequelize, DataTypes) {
     last_name: {
       type: DataTypes.STRING
     },
+    mobile: {
+      type: DataTypes.STRING
+    },
     age: {
       type: DataTypes.INTEGER,
       allowNull: true,
