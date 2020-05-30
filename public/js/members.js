@@ -1,10 +1,11 @@
 $(document).ready(() => {
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
-  $.get("/api/user_data").then((data) => {
+  $.get("/api/user_data").then(data => {
     $(".member-name").text(data.email);
+    $(".member-name").attr("data-user-id", data.id);
   });
-  $(".user-information").on("submit", (event) => {
+  $(".user-information").on("submit", event => {
     event.preventDefault();
     console.log(event);
     const memberData = {
@@ -31,7 +32,7 @@ $(document).ready(() => {
         .trim(),
       goal_weight: $("#target-weight")
         .val()
-        .trim(),
+        .trim()
     };
 
     if (!memberData.firstName || !memberData.lastName) {
@@ -52,15 +53,24 @@ $(document).ready(() => {
   // Otherwise we log any errors
   function UserInfo(memberData) {
     console.log(memberData);
-    /* $.post("/api/member/id",memberData)
-        .then(() => {
-          window.location.replace("/members");
-          // If there's an error, handle it by throwing up a bootstrap alert
-        })
-        .catch(handleLoginErr);*/
+    $.ajax({
+      url: "/api/member/" + $(".member-name").attr("data-user-id"),
+      type: "PUT",
+      data: memberData,
+      success: function () {
+        //play with data
+        location.replace("/homepage");
+      }
+    });
+    /*$.put("/api/member/" + $(".member-name").attr("data-user-id"), memberData)
+      .then(() => {
+        location.replace("/homepage");
+        // If there's an error, handle it by throwing up a bootstrap alert
+      })
+      .catch(handleLoginErr);*/
   }
 
-  /* function handleLoginErr(err) {
+  /*function handleLoginErr(err) {
     $("#alert .msg").text(err.responseJSON);
     $("#alert").fadeIn(500);
   }*/
