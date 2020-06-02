@@ -791,7 +791,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 /* Homepage Styles */
 /* Start Banner Area */
 .banner-area {
-  background: url(../img/banner-bg.jpg) center;
+  background: url(../images/banner-bg.jpg) center;
   background-size: cover; }
   .banner-area .container-fluid {
     padding-left: 15%;
