@@ -2,7 +2,9 @@
 const db = require("../models");
 const passport = require("../config/passport");
 
-module.exports = function(app) {
+module.exports = function (app) {
+
+
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
@@ -29,7 +31,7 @@ module.exports = function(app) {
         res.status(401).json(err);
       });
   });
-  
+
   // Route for updating user 
   app.put("/api/member/:id", (req, res) => {
     // log body of request when passed from front
@@ -42,14 +44,14 @@ module.exports = function(app) {
         id: req.params.id
       }
     })
-    .then((dbUser) => {
-      console.log(dbUser);
-      res.json(dbUser);
-      // res.redirect(302, "/api/user_data")
-    })
-    .catch(err => {
-      res.status(401).json(err);
-    });
+      .then((dbUser) => {
+        console.log(dbUser);
+        res.json(dbUser);
+        // res.redirect(302, "/api/user_data")
+      })
+      .catch(err => {
+        res.status(401).json(err);
+      });
   });
 
   // Route for logging user out
@@ -81,15 +83,85 @@ module.exports = function(app) {
     }
   });
 
-  //Save all the user information to the database
+  // POST route for saving a new post
+  app.post("/api/createExercise", (req, res) => {
+    db.Exercise.create({
+      exercise_name: req.body.title,
+      body_area: req.body.body,
+      difficulty: req.body.difficulty
+    })
+      .then((dbExercise) => {
+        res.json(dbExercise);
+      })
+      .catch((err) => {
+        res.status(401).json(err);
+      });
+  });
 
-  // This function removes null, undefined, and "" blank values from an object 
-  function clean(obj) {
-    for (var propName in obj) { 
-      if (obj[propName] === null || obj[propName] === undefined || obj[propName] === "") {
-        delete obj[propName];
+  /*app.get("/api/exercises_by_difficulty/:difficulty", (req, res) => {
+    db.Exercise.find({
+      where: {
+        difficulty: req.params.difficulty
       }
+    })
+      .then((dbExercise) => {
+        res.json(dbExercise);
+      })
+      .catch((err) => {
+        res.status(401).json(err);
+      });
+  });*/
+
+  app.get("/api/exercises_data", (req, res) => {
+    if (!req.Exercise) {
+      // The user is not logged in, send back an empty object
+      res.json({});
+    } else {
+      db.Exercise.findOne({
+        where: {
+          id: req.Exercise.id
+        }
+      }).then(dbExercise => {
+        // Otherwise send back the user's email and id
+        // Sending back a password, even a hashed password, isn't a good idea
+        res.json(dbExercise.dataValues);
+      });
     }
-    return obj;
-  }
-};
+  });
+
+  // DELETE route for deleting posts
+  app.delete("/api/createExercise/:id", (req, res) => {
+    db.Exercise.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+      .then(function (dbExercise) {
+        res.json(dbExercise);
+      });
+  });
+
+  // PUT route for updating posts
+  app.put("/api/createExercise", (req, res) => {
+    db.Exercise.update(req.body,
+      {
+        where: {
+          id: req.body.id
+        }
+      })
+      .then(function (dbExercise) {
+        res.json(dbExercise);
+      });
+    //Save all the user information to the database
+
+    // This function removes null, undefined, and "" blank values from an object 
+    function clean(obj) {
+      for (var propName in obj) {
+        if (obj[propName] === null || obj[propName] === undefined || obj[propName] === "") {
+          delete obj[propName];
+        }
+      }
+      return obj;
+    }
+  })
+}

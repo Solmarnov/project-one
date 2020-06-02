@@ -986,6 +986,18 @@ body.mobile-nav-active #mobile-nav-toggle {
 /* Footer */
 .footer-area h4 {
   color: #fff; }
-.footer-area .footer-bottom {
-  padding-top: 40px; 
-  padding-bottom: 20px; }
+/*.footer-area .footer-bottom {
+    padding-top: 40px;
+    padding-bottom: 20px;
+    left: -21px;
+    position: absolute;
+    right: 192px;
+}*/
+.text.text-center {
+  padding-left: 343px;
+}
+section.banner.mt-5 {
+  background: url("../images/exercise.png");
+  height: 700px;
+  background-size: cover;
+}
