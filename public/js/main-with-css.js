@@ -37,32 +37,6 @@ $(document).ready(function () {
         speed: 400
     });
 
-
-    //------- Owl Carusel  js --------//  
-    $('.active-testimonial-carusel').owlCarousel({
-        items: 3,
-        loop: true,
-        margin: 0,
-        dots: true,
-        autoplayHoverPause: true,
-        smartSpeed: 650,
-        // autoplay:true,    
-        responsive: {
-            0: {
-                items: 1
-            },
-            480: {
-                items: 1,
-            },
-            768: {
-                items: 2,
-            },
-            992: {
-                items: 3,
-            }
-        }
-    })
-
     //------- Mobile Nav  js --------//  
 
     if ($('#nav-menu-container').length) {
