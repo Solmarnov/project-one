@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Dell2009.",
+    "password": "null",
     "database": "project_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
