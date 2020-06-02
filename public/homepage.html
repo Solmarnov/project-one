@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
+
 <head>
 	<!-- Mobile Specific Meta -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,6 +22,7 @@
 			CSS
 			============================================= -->
 	<!-- bootstrap -->
+<<<<<<< Updated upstream
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <!-- linear icons -->
     <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
@@ -30,7 +32,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.min.css">
     <!-- main css -->
 	<link rel="stylesheet" href="../stylesheets/main.css">
+=======
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+		integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<!-- linear icons -->
+	<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+	<!-- font awesome 5 -->
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+		integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+	<!-- animate -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.min.css">
+
+	<!-- main css -->
+	<link rel="stylesheet" href="stylesheets/main.css">
+	<link rel="stylesheet" href="stylesheets/style.css">
+
+>>>>>>> Stashed changes
 </head>
+
 <body>
 	<!-- Header Area -->
 	<header id="header">
@@ -124,42 +143,39 @@
 						<div class="overlay overlay-bg"></div>
 					</figure>
 					<div class="text-center">
-						<h4 class="mb-10">Go for a run</h4>
-						<p>
-							<a href="#">Link</a>
-						</p>
+						<a href="#">
+							<h4 class="mb-10">Go for a run</h4>
+						</a>
 					</div>
 				</div>
 				<div class="col-lg-6 col-md-6 single-feature">
 					<figure>
 						<!-- add image for EXERCISES -->
-						<img class="img-fluid" src="../images/exercise.png" alt="">
+						<img class="img-fluid" src="./images/cartoon-exercise.jpg" alt="">
 						<div class="overlay overlay-bg"></div>
 					</figure>
 					<div class="text-center">
-						<h4 class="mb-10">Exercises</h4>
-						<p>
-							<a href="/exercises">Link</a>
-						</p>
+						<a href="/exercises">
+							<h4 class="mb-10">Exercises</h4>
+						</a>
+
 					</div>
 				</div>
 				<div class="col-lg-6 col-md-6 single-feature">
 					<figure>
 						<!-- add image for WORKOUTS -->
-						<img class="img-fluid" src="../images/workout.png" alt="">
+						<a href="/workouts"><img class="img-fluid" src="../images/workout.png" alt=""></a>
 						<div class="overlay overlay-bg"></div>
 					</figure>
 					<div class="text-center">
 						<h4 class="mb-10">Workouts</h4>
-						<p>
-							<a href="/workouts">Link</a>
-						</p>
 					</div>
 				</div>
-				
+
 			</div>
 		</div>
 	</section>
+
 	<!-- Schedule Area -->
 	<section class="schedule-area section-gap">
 		<!-- can add an image at the back -->
@@ -241,28 +257,38 @@
 		</div>
 	</section>
 	<!-- Footer Area -->
-	<footer class="footer-area section-gap">
-		<div class="container">
-			<div class="footer-bottom row align-items-center">
-				Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Cynthia Zhou, Scott Daniels, Prakriti Rajbhandari
+	<footer>
+		<div class="container my-5">
+			<div class="row">
+				<div class="text text-center">
+					Copyright &copy;
+					<script>document.write(new Date().getFullYear());</script> All rights reserved | Cynthia Zhou, Scott
+					Daniels, Prakriti Rajbhandari
+				</div>
 			</div>
 		</div>
 	</footer>
 	<!-- bootstrap -->
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <!-- linear icons -->
-    <script src="https://cdn.linearicons.com/free/1.0.0/svgembedder.min.js"></script>
-    <!--  -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+		integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+		crossorigin="anonymous"></script>
+	<!-- linear icons -->
+	<script src="https://cdn.linearicons.com/free/1.0.0/svgembedder.min.js"></script>
+	<!--  -->
 	<script src="../js/vendor/jquery-2.2.4.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" 
-		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-		 crossorigin="anonymous">
-	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+		</script>
 	<script src="../js/superfish.min.js"></script>
 	<script src="../js/jquery.magnific-popup.min.js"></script>
 	<script src="../public/js/main-with-css.js"></script>
 	<script type="text/javascript" src="js/homepage.js"></script>
 </body>
+
 </html>
