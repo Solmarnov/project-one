@@ -789,7 +789,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 /* Homepage Styles */
 /* Start Banner Area */
 .banner-area {
-  background: url(../img/banner-bg.jpg) center;
+  background: url(../images/exercise.png) center;
   background-size: cover; }
   .banner-area .container-fluid {
     padding-left: 15%;
@@ -992,3 +992,5 @@ body.mobile-nav-active #mobile-nav-toggle {
 .footer-area .footer-bottom {
   padding-top: 40px; 
   padding-bottom: 20px; }
+
+ 
