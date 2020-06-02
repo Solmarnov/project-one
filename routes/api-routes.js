@@ -108,20 +108,16 @@ module.exports = function (app) {
   });*/
 
   app.get("/api/exercises_data", (req, res) => {
-    if (!req.Exercise) {
-      // The user is not logged in, send back an empty object
-      res.json({});
-    } else {
-      db.Exercise.findOne({
-        where: {
-          id: req.Exercise.id
-        }
-      }).then(dbExercise => {
-        // Otherwise send back the user's email and id
-        // Sending back a password, even a hashed password, isn't a good idea
-        res.json(dbExercise.dataValues);
-      });
-    }
+
+    db.Exercise.findOne({
+      where: {
+        id: req.Exercise.id
+      }
+    }).then(dbExercise => {
+      // Otherwise send back the user's email and id
+      // Sending back a password, even a hashed password, isn't a good idea
+      res.json(dbExercise.dataValues);
+    });
   });
 
   // DELETE route for deleting posts
