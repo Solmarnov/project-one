@@ -2,7 +2,7 @@
 
 module.exports = function(sequelize, DataTypes) {
   const ExerciseCategory = sequelize.define("ExerciseCategories", {
-    exercise_cateogry: {
+    exercise_category: {
       type: DataTypes.STRING
     },
     description: {

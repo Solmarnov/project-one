@@ -4,8 +4,8 @@
 <head>
 	<!-- Mobile Specific Meta -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<!-- Favicon add image for icon -->
-	<link rel="shortcut icon" href="#">
+	<!-- Tab Logo -->
+	<link rel="shortcut icon" href="images/LOGO-with-background.png">
 	<!-- Author Meta -->
 	<meta name="author" content="colorlib">
 	<!-- Meta Description -->
@@ -84,14 +84,22 @@
 	<br><br>
 
 	<section class="container">
-		<div class="section-title-wrap text-center">
+		<div class="section-title-wrap text-center" id="select-exercise-category">
 			<h1>Create a workout</h1>
-			<button class="btn btn-outline-secondary m-5" id="aerobics-training-workout">Aerobic training</button>
-			<button class="btn btn-outline-secondary m-5" id="anaerobic-training-workout">Anaerobic training</button>
+			<div class="row">
+				<div class="col-md-6">
+					<button class="btn btn-outline-secondary m-5" id="aerobic-exercise" data-id="1">Aerobic exercise</button>
+					<p id="aerobic-exercise-description">Aerobic exercise (also known as cardio) is physical exercise of low to high intensity that depends primarily on the aerobic energy-generating process. "Aerobic" means "relating to, involving, or requiring free oxygen", and refers to the use of oxygen to adequately meet energy demands during exercise via aerobic metabolism.</p>
+				</div>
+				<div class="col-md-6">
+					<button class="btn btn-outline-secondary m-5" id="anaerobic-exercise" data-id="2">Anaerobic exercise</button>
+					<p id="anaerobic-exercise-description">Anaerobic exercise is a type of exercise that breaks down glucose in the body without using oxygen, as anaerobic means “without oxygen”. In practical terms, this means that anaerobic exercise is harder but shorter than aerobic exercise.</p>
+				</div>
+			</div>			
 		</div>
-		<div class="workout-type-summary" hidden>
-			<h2 class="workout-type-heading"></h2>
-			<p class="workout-type-description"></p>
+		<div class="exercise-type-summary" hidden>
+			<h2 class="exercise-type-heading"></h2>
+			<p class="exercise-type-description"></p>
 		</div>
 
 		<!-- Form to create strength training workout -->

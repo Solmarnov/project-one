@@ -1,4 +1,4 @@
-INSERT INTO ExerciseCategories (`exercise_cateogry`, `description`, `createdAt`, `updatedAt`) 
+INSERT INTO ExerciseCategories (`exercise_category`, `description`, `createdAt`, `updatedAt`) 
 VALUES 
   (
     "Aerobic exercise", 
