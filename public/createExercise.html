@@ -2,17 +2,44 @@
 <html lang="en">
 
 <head>
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon add image for icon -->
+    <link rel="shortcut icon" href="#">
+    <!-- Author Meta -->
+    <meta name="author" content="colorlib">
+    <!-- Meta Description -->
+    <meta name="description" content="">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="">
+    <!-- meta character set -->
     <meta charset="UTF-8">
-    <title>CMS - Express</title>
+
+    <!-- Site Title -->
+    <title>PHAT Create</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,700" rel="stylesheet">
+    <!--
+            CSS
+            ============================================= -->
+
     <!-- Latest compiled and minified CSS & JS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/flatly/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="stylesheets/style.css" media="screen" title="no title">
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+            integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- linear icons -->
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+    <!-- font awesome 5 -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <!-- animate -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.min.css">
     <!-- main css -->
     <link rel="stylesheet" href="stylesheets/main.css">
     <link rel="stylesheet" href="stylesheets/style.css">
 </head>
+
 <!-- Header Area -->
 <header id="header">
     <div class="container main-menu">
@@ -21,20 +48,6 @@
                 <!-- add an image for logo -->
                 <a href="/"><img src="" alt="" title="" /></a>
             </div>
-            <nav id="nav-menu-container">
-                <ul class="nav-menu">
-                    <li><a class="active" href="/">Home</a></li>
-                    <!-- NEED TO CREATE members.html -->
-                    <li><a href="/members">Members</a></li>
-                    <li class="menu-has-children"><a href="#">Weekly Plan</a>
-                        <ul>
-                            <li><a href="/schedule">Schedule</a></li>
-                            <li><a href="/exercises">Exercises</a></li>
-                            <li><a href="/workouts">Workouts</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
         </div>
     </div>
 </header>
@@ -50,6 +63,8 @@
             <div class="col-md-5 offset-md-3">
                 <form id="cms">
                     <div class="form-group mt-5">
+                        <h3 class="text-center">Create your own exercise!</h3>
+                        <br>
                         <label for="title">Title:</label>
                         <input type="text" class="form-control" id="title">
                         <br />
@@ -57,7 +72,7 @@
                             <label for="category">Difficulty:</label>
                             <select class="custom-select" id="difficulty">
                                 <option value="Beginners">Beginners</option>
-                                <option value="Intermiate">Intermiate</option>
+                                <option value="Intermiate">Intermediate</option>
                                 <option value="Advance">Advance</option>
                             </select>
                         </div>
@@ -72,7 +87,7 @@
         </div>
     </div>
     <footer>
-        <div class="container my-5">
+        <div class="footer">
             <div class="row">
                 <div class="text text-center">
                     Copyright &copy;
