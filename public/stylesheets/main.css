@@ -71,6 +71,7 @@ a:hover {
 
 .btn {
   font-size: 1.5rem!important;
+  text-transform: none!important;
   }
 
 .btn.active.focus,
