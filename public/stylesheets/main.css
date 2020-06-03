@@ -69,6 +69,10 @@ a:hover {
   text-decoration: none;
   outline: 0; }
 
+.btn {
+  font-size: 1.5rem!important;
+  }
+
 .btn.active.focus,
 .btn.active:focus,
 .btn.focus,
@@ -305,7 +309,6 @@ th {
   position: absolute;
   left: 0;
   right: 0;
-  top: 0;
   bottom: 0; }
 
 .container.fullwidth {
@@ -341,27 +344,6 @@ th {
     font-weight: 400;
     max-width: 492px;
     margin: 0 auto; }
-
-    /* REALLY NEED>?????????????????? */
-.whole-wrap {
-  background-color: #f9f9ff; }
-
-@media (max-width: 991px) {
-  .progress-table-wrap {
-    overflow-x: scroll; } }
-
-.single-gallery-image {
-  margin-top: 30px;
-  background-repeat: no-repeat !important;
-  background-position: center center !important;
-  background-size: cover !important;
-  height: 200px;
-  -webkit-transition: all 0.3s ease 0s;
-  -moz-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s; }
-  .single-gallery-image:hover {
-    opacity: .8; }
 
 .list-style {
   width: 14px;
@@ -590,8 +572,9 @@ th {
 /* Navigation Menu */
 .nav-menu,
 .nav-menu * {
-  margin: 0;
-  padding: 0;
+  margin: 30!important;
+  padding-right: 30!important;
+  padding-top: 15!important;
   list-style: none; }
 
 .nav-menu ul {
@@ -684,6 +667,14 @@ th {
 .nav-menu ul ul {
   margin-right: 10px;
   margin-top: 0; }
+
+.navbar-default, .navbar-brand {
+  color: #333333;
+  padding-top: 10px;
+  padding-right: 30px;
+  font-size: 18px;
+  background-color: lightgrey;
+}
 
 /* Mobile Nav Toggle */
 #mobile-nav-toggle {
@@ -791,6 +782,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 /* Homepage Styles */
 /* Start Banner Area */
 .banner-area {
+  padding-top: 15px;
   background: url(../images/banner-bg.jpg) center;
   background-size: cover; }
   .banner-area .container-fluid {
@@ -806,6 +798,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 @media (max-width: 767px) {
   .fullscreen {
+    padding-top: 15px;
+
     height: 700px !important; } }
 .banner-content {
   text-align: left; }
@@ -989,22 +983,23 @@ body.mobile-nav-active #mobile-nav-toggle {
     font-weight: 600; }
 
 /* Footer */
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding-left: 40px;
+  padding-bottom: 20px;
+}
 .footer-area h4 {
   color: #fff; }
-/*.footer-area .footer-bottom {
-    padding-top: 40px;
-    padding-bottom: 20px;
-    left: -21px;
-    position: absolute;
-    right: 192px;
-}*/
-.text.text-center {
-  padding-left: 343px;
-}
+
 section.banner.mt-5 {
   background: url("../images/exercise.png");
   height: 700px;
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 button.edit.btn.btn-default {
