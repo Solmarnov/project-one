@@ -1015,3 +1015,21 @@ button.delete.btn.btn-danger {
   float: right;
 }
 
+.image-exercise{
+  height: 300px;
+  width: 270px;
+}
+
+@media (max-width: 780px){
+.image-exercise {
+    height: 236px;
+    width: 166px;
+}
+}
+
+@media (max-width: 425px){
+  .image-exercise {
+    height: 300px;
+    width: 394px;
+  }
+  }
