@@ -204,3 +204,13 @@ button {
   display: block;
   clear: both;
 }
+
+a.btn.btn-dark {
+    float: left;
+    position: absolute;
+    left: 112px;
+    background: #0093df;
+    border: 1px solid #0093df;
+    padding: 16px;
+    text-decoration: none;
+}
