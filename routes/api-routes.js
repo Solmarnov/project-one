@@ -66,14 +66,49 @@ module.exports = function (app) {
           id: req.user.id
         }
       })
-        .then(dbUser => {
-          // Otherwise send back the user's email and id
-          // Sending back a password, even a hashed password, isn't a good idea
-          res.json(dbUser.dataValues);
-        })
-        .catch((err) => {
-          res.status(401).json(err);
-        });
+      .then(dbUser => {
+        // Otherwise send back the user's email and id
+        // Sending back a password, even a hashed password, isn't a good idea
+        res.json(dbUser.dataValues);
+      })
+      .catch((err) => {
+        res.status(401).json(err);
+      });
+    }
+  });
+
+  app.get("/api/exercise-categories", (req, res) => {
+    if (!req.user) {
+      res.json({});
+    } else {
+      db.ExerciseCategories.findAll({})
+      .then(dbExerciseCategories => {
+        console.log(dbExerciseCategories);
+        res.json(dbExerciseCategories);
+      })
+      .catch(err => {
+        res.status(401).json(err);
+      })
+    }
+  });
+
+  app.get("/api/exercise-category", (req, res) => {
+    console.log(req.query);
+    if (!req.user) {
+      // The user is not logged in, send back an empty object
+      res.json({});
+    } else {
+      db.ExerciseCategories.findAll({
+        where: {
+          exercise_category: req.query.exerciseCategory
+        }
+      })
+      .then(dbExerciseCategory => {
+        res.json(dbExerciseCategory.dataValues);
+      })
+      .catch((err) => {
+        res.status(401).json(err);
+      });
     }
   });
 
@@ -84,12 +119,12 @@ module.exports = function (app) {
       body_area: req.body.body,
       difficulty: req.body.difficulty
     })
-      .then((dbExercise) => {
-        res.json(dbExercise);
-      })
-      .catch((err) => {
-        res.status(401).json(err);
-      });
+    .then((dbExercise) => {
+      res.json(dbExercise);
+    })
+    .catch((err) => {
+      res.status(401).json(err);
+    });
   });
 
   // Get route for retrieving a single post
@@ -100,19 +135,18 @@ module.exports = function (app) {
         id: req.params.id
       }
     })
-      .then(function (dbExercise) {
-        res.json(dbExercise);
-
-      });
+    .then(function (dbExercise) {
+      res.json(dbExercise);
+    });
   });
-
 
   app.get("/api/exercises_data", (req, res) => {
     if (!req.user) {
       // The user is not logged in, send back an empty object
       res.json({});
     } else {
-      db.Exercise.findAll().then(dbExercise => {
+      db.Exercise.findAll()
+      .then(dbExercise => {
         //console.log(dbExercise);
         // Otherwise send back the user's email and id
         // Sending back a password, even a hashed password, isn't a good idea
@@ -129,12 +163,12 @@ module.exports = function (app) {
         id: req.params.id
       }
     })
-      .then(function (dbExercise) {
-        res.json(dbExercise);
-      })
-      .catch((err) => {
-        res.status(401).json(err);
-      });
+    .then(function (dbExercise) {
+      res.json(dbExercise);
+    })
+    .catch((err) => {
+      res.status(401).json(err);
+    });
   });
 
   // PUT route for updating posts
@@ -144,12 +178,12 @@ module.exports = function (app) {
         id: req.body.id
       }
     })
-      .then(function (dbExercise) {
-        res.json(dbExercise);
-      })
-      .catch((err) => {
-        res.status(401).json(err);
-      });
+    .then(function (dbExercise) {
+      res.json(dbExercise);
+    })
+    .catch((err) => {
+      res.status(401).json(err);
+    });
   });
 
   //Save all the user information to the database

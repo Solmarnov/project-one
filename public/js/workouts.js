@@ -1,24 +1,39 @@
 $(document).ready(() => {
+  getExerciseCategories();
 
-  $("button#aerobics-training-workout").on("click", (event) => {
-    const workoutCategory = event.target.outerText
-    const workoutCategoryObj = {
-      workoutCategory: workoutCategory
+  $("#aerobic-exercise").on("click", function(event) {
+    console.log($(this).attr("data-id"));
+    const exerciseCategoryId = $("#aerobic-exercise").attr("data-id");
+    console.log(exerciseCategoryId);
+    const exerciseCategory = event.target.outerText
+    const exerciseCategoryObj = {
+      exerciseCategory: exerciseCategory
     };
-    console.log(workoutCategoryObj);
-    getWorkoutCategory(workoutCategoryObj);
+    getExerciseCategory(exerciseCategoryObj);
     
     $("form.create-aerobics-workout").removeAttr("hidden");
     $("form.create-anaerobic-workout").attr("hidden");
   });
   
-  function getWorkoutCategory(workoutCategoryObj) {
-    $.get("/api/workout-category", workoutCategoryObj)
-    .then(workoutData => {
-      console.log(workoutData);
-      $(".workout-type-heading").text(workoutData.exercise_category);
-      $(".workout-type-description").text(workoutData.description);
-      $(".workout-type-summary").deleteAttr("hidden");
+  function getExerciseCategory(Obj) {
+    console.log(Obj);
+    $.ajax({
+      url: "/api/exercise-category",
+      type: "GET",
+      data: Obj
+    }).then(exerciseData => {
+      console.log(exerciseData);
+      $(".exercise-type-heading").text(exerciseData.exercise_category);
+      $(".exercise-type-description").text(exerciseData.description);
+      $(".exercise-type-summary").deleteAttr("hidden");
+    });
+  }
+
+  function getExerciseCategories() {
+    $.get("/api/exercise-categories")
+    .then(data => {
+      console.log("Test");
+      console.log(data);
     });
   }
   
