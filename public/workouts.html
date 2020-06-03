@@ -16,7 +16,7 @@
 	<meta charset="UTF-8">
 
 	<!-- Site Title -->
-	<title>MVP Workouts Page</title>
+	<title>PHAT Workouts</title>
 
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,700" rel="stylesheet">
@@ -24,19 +24,24 @@
 			CSS
 			============================================= -->
 	<!-- bootstrap -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <!-- linear icons -->
-    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
-    <!-- font awesome 5 -->
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <!-- animate -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.min.css">
-    <!-- main css -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+		integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<!-- linear icons -->
+	<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+	<!-- font awesome 5 -->
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+		integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+	<!-- animate -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.min.css">
+	<!-- main css -->
 	<link rel="stylesheet" href="stylesheets/main.css">
 	<link rel="stylesheet" href="stylesheets/style.css">
+
 </head>
 
 <body>
+    <br>
 	<!-- Header Area -->
 	<header id="header">
 		<div class="container main-menu">
@@ -64,17 +69,12 @@
 	</header>
 
 	<!-- Banner Area -->
-	<section class="banner-area relative" id="home">
-		<div class="overlay overlay-bg"></div>
-		<div class="container-fluid">
-			<div class="row fullscreen d-flex align-items-center justify-content-between">
-				<div class="col-lg-6 col-md-6 banner-img">
-					<!-- IMAGE REQUIRED add a banner image-->
-					<img class="img-fluid" src="/images/workout.png" alt="exercise-image">
-				</div>
+  <section class="banner mt-5">
+		<div class="container mt-5">
+			<div class="row">
 				<div class="banner-content col-lg-6 col-md-6">
-					<h1 class="text-uppercase">
-						<span>Workouts!!</span><br><br> More Exercises!
+					<h1 class="text-uppercase mt-5">
+						<span>Workouts!!</span><br><br> Lets move our body!
 					</h1>
 				</div>
 			</div>
@@ -105,8 +105,6 @@
 				</select>
 			</div>
 		</form>
-
-		<!-- Form to create circuit training workout -->
 	</section>
 
 	<!-- Features Area -->
@@ -127,48 +125,50 @@
 						<div class="overlay overlay-bg"></div>
 					</figure>
 					<div class="text-center">
-						<h4 class="mb-10">Go for a run</h4>
-						<p>
-							<a href="#">Link</a>
-						</p>
+						<a href="#">
+							<h4 class="mb-10">Go for a run</h4>
+						</a>
 					</div>
 				</div>
 				<div class="col-lg-6 col-md-6 single-feature">
 					<figure>
 						<!-- add image for EXERCISES -->
+
 						<img class="img-fluid" src="/images/cartoon-exercise.jpg" alt="">
+
 						<div class="overlay overlay-bg"></div>
 					</figure>
 					<div class="text-center">
-						<h4 class="mb-10">Exercises</h4>
-						<p>
-							<a href="/exercises">Link</a>
-						</p>
+						<a href="/exercises">
+							<h4 class="mb-10">Exercises</h4>
+						</a>
 					</div>
 				</div>
 				<div class="col-lg-6 col-md-6 single-feature">
-					<figure>
+                    <figure>
 						<!-- add image for WORKOUTS -->
 						<img class="img-fluid" src="../images/workout.png" alt="">
 						<div class="overlay overlay-bg"></div>
 					</figure>
 					<div class="text-center">
-						<h4 class="mb-10">Workouts</h4>
-						<p>
-							<a href="/workouts">Link</a>
-						</p>
+						<a href="/workouts">
+                            <h4 class="mb-10">Workouts</h4>
+						</a>
 					</div>
 				</div>
-				
 			</div>
 		</div>
 	</section>
 
 	<!-- Footer Area -->
-	<footer class="footer-area section-gap">
-		<div class="container">
-			<div class="footer-bottom row align-items-center">
-				Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Cynthia Zhou, Scott Daniels, Prakriti Rajbhandari
+	<footer>
+		<div class="container my-5">
+			<div class="row">
+				<div class="text text-center">
+					Copyright &copy;
+					<script>document.write(new Date().getFullYear());</script> All rights reserved | Cynthia Zhou, Scott
+					Daniels, Prakriti Rajbhandari
+				</div>
 			</div>
 		</div>
 	</footer>
@@ -186,8 +186,7 @@
 	<script src="/js/jquery.magnific-popup.min.js"></script>
 	<script src="/js/main-with-css.js"></script>
 	<script src="/js/workouts.js"></script>
-    
-
+  
 </body>
 
 </html>
