@@ -40,7 +40,11 @@ module.exports = function (app) {
   });
 
   app.get("/CreateExercises", isAuthenticated, (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/CreateExercise.html"));
+    res.sendFile(path.join(__dirname, "../public/createExercise.html"));
+  });
+
+  app.get("/run", isAuthenticated, (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/run.html"));
   });
 
   app.get("/workouts", isAuthenticated, (req, res) => {

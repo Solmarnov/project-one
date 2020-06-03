@@ -1006,3 +1006,11 @@ section.banner.mt-5 {
   height: 700px;
   background-size: cover;
 }
+
+button.edit.btn.btn-default {
+  float: right;
+}
+
+button.delete.btn.btn-danger {
+  float: right;
+}
